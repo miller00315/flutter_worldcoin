@@ -2,7 +2,7 @@ import 'package:flutter_worldcoin/entities/human_verification.dart';
 import 'package:flutter_worldcoin/entities/worldcoin_verification_level.dart';
 
 class UserInfo {
-   final String sub;
+  final String? sub;
   final HumanVerification? deprecatedVerification;
   final WorldcoinVerificationLevel? verification;
   final String? email;
@@ -11,7 +11,7 @@ class UserInfo {
   final String? familyName;
 
   UserInfo({
-    required this.sub,
+    this.sub,
     this.deprecatedVerification,
     this.verification,
     this.email,
@@ -27,7 +27,8 @@ class UserInfo {
           ? HumanVerification.fromJson(json['https://id.worldcoin.org/beta'])
           : null,
       verification: json['https://id.worldcoin.org/v1'] != null
-          ? WorldcoinVerificationLevel.fromJson(json['https://id.worldcoin.org/v1'])
+          ? WorldcoinVerificationLevel.fromJson(
+              json['https://id.worldcoin.org/v1'])
           : null,
       email: json['email'],
       name: json['name'],
@@ -36,6 +37,3 @@ class UserInfo {
     );
   }
 }
-
-
-

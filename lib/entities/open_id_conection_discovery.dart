@@ -1,4 +1,4 @@
-class OpenIdConfiguration {
+class OpenIdConectionDiscovery {
   String? issuer;
   String? authorizationEndpoint;
   String? tokenEndpoint;
@@ -10,7 +10,7 @@ class OpenIdConfiguration {
   List<String>? subjectTypesSupported;
   List<String>? idTokenSigningAlgValuesSupported;
 
-  OpenIdConfiguration({
+  OpenIdConectionDiscovery({
     this.issuer,
     this.authorizationEndpoint,
     this.tokenEndpoint,
@@ -23,8 +23,8 @@ class OpenIdConfiguration {
     this.idTokenSigningAlgValuesSupported,
   });
 
-  factory OpenIdConfiguration.fromJson(Map<String, dynamic> json) =>
-      OpenIdConfiguration(
+  factory OpenIdConectionDiscovery.fromJson(Map<String, dynamic> json) =>
+      OpenIdConectionDiscovery(
         issuer: json['issuer'],
         authorizationEndpoint: json['authorization_endpoint'],
         tokenEndpoint: json['token_endpoint'],

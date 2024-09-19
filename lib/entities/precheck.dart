@@ -3,15 +3,15 @@
 ///[externalNullifier] The ZKP's external nullifier. This parameter is deprecated and will be removed in a future release, and should no longer be used. Instead, pass the action parameter.
 library;
 
-class GetActionMetadata {
+class Precheck {
   String? action;
   String? nullifierHash;
   String? externalNullifier;
 
-  GetActionMetadata({this.action, this.nullifierHash, this.externalNullifier});
+  Precheck({this.action, this.nullifierHash, this.externalNullifier});
 
-  factory GetActionMetadata.fromJson(Map<String, dynamic> json) =>
-      GetActionMetadata(
+  factory Precheck.fromJson(Map<String, dynamic> json) =>
+      Precheck(
         action: json['action'],
         nullifierHash: json['nullifier_hash'],
         externalNullifier: json['external_nullifier'],

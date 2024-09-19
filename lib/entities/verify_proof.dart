@@ -1,4 +1,4 @@
-class VerifyProofContent {
+class VerifyProof {
   String? nullifierHash;
   String? merkleRoot;
   String? proof;
@@ -6,7 +6,7 @@ class VerifyProofContent {
   String? action;
   String? signalHash;
 
-  VerifyProofContent({
+  VerifyProof({
     this.nullifierHash,
     this.merkleRoot,
     this.proof,
@@ -15,14 +15,14 @@ class VerifyProofContent {
     this.signalHash,
   });
 
-  factory VerifyProofContent.fromJson(Map<String, dynamic> json) => VerifyProofContent(
-    nullifierHash: json['nullifier_hash'],
-    merkleRoot: json['merkle_root'],
-    proof: json['proof'],
-    verificationLevel: json['verification_level'],
-    action: json['action'],
-    signalHash: json['signal_hash'],
-  );
+  factory VerifyProof.fromJson(Map<String, dynamic> json) => VerifyProof(
+        nullifierHash: json['nullifier_hash'],
+        merkleRoot: json['merkle_root'],
+        proof: json['proof'],
+        verificationLevel: json['verification_level'],
+        action: json['action'],
+        signalHash: json['signal_hash'],
+      );
 
   Map<String, dynamic> toJson() => {
         "nullifier_hash": nullifierHash,
